@@ -3,8 +3,9 @@
 //The main controller for the application
 function AppCtrl($scope,$http){
 
+
 	//load the database 
-	$http({method:"GET", url:'/process'})
+	/*$http({method:"GET", url:'/process'})
 		.success(function(data, status, headers, config){
 			if(status != 200){
 				alert('Error occur..');
@@ -14,9 +15,9 @@ function AppCtrl($scope,$http){
 		.error(function(data, status, headers, config){
 			alert(data);
 			console.error(status);
-			
-		});
 
+		});
+	*/
 
 	$scope.events=[{
 			id: 1,
@@ -24,14 +25,16 @@ function AppCtrl($scope,$http){
 			imageUrl:"img/default.png",
 			date: "2013-12-12",
 			time: "12:12:00",
-			description: "A simple event trial"
+			description: "A simple event trial",
+			status:'label-warning'
 		},
 		{	id: 2,
 			name:"Peter",
-			imageUrl:"img/default.png",
+			imageUrl:"img/car.jpg",
 			date: "2013-12-12",
 			time: "12:12:00",
-			description: "A simple event trial"
+			description: "A simple event trial",
+			status:'label-success'
 		},
 		{
 			id: 3,
@@ -39,9 +42,12 @@ function AppCtrl($scope,$http){
 			imageUrl: 'img/default.png',
 			date: '2014-12-12',
 			time: '1:1:1',
-			description: 'A simple event to ... not sure as yet'
+			description: 'A simple event to ... not sure as yet',
+			status:'label-important'
 		}
 		];
+
+		$scope.noEvents=null;
 
 	//Setting the url for details view
 	$scope.detailsUrl ="partials/edit.html";
@@ -59,7 +65,7 @@ function AppCtrl($scope,$http){
 		
 	}
 
-	$scope.saveEvent = function(event){
+	$scope.updateEvent = function(event){
 		//Will be used to save and event to database
 		console.log(event);
 	}
