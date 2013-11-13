@@ -1,7 +1,23 @@
 'use strict';
 
 //The main controller for the application
-function AppCtrl($scope){
+function AppCtrl($scope,$http){
+
+	//load the database 
+	$http({method:"GET", url:'/process'})
+		.success(function(data, status, headers, config){
+			if(status != 200){
+				alert('Error occur..');
+			}
+
+		})
+		.error(function(data, status, headers, config){
+			alert(data);
+			console.error(status);
+			
+		});
+
+
 	$scope.events=[{
 			id: 1,
 			name:"Solomon",
@@ -38,7 +54,21 @@ function AppCtrl($scope){
 
 
 	$scope.deleteEvent = function(id){
-		alert(id);
+		//Remove a particular event based on the id number.
+		//set the event_visible to 0 rather than deleting it.
+		
+	}
+
+	$scope.saveEvent = function(event){
+		//Will be used to save and event to database
+		console.log(event);
+	}
+
+
+	$scope.cancelEvent= function(){
+		//Cancel event
+		$scope.editing= null;
+
 	}
 
 

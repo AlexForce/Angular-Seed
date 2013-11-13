@@ -1,5 +1,5 @@
 <div ng-show="editing">
-	<form action="">
+	<form action="" ng-submit="saveEvent(editing)">
 	    <fieldset>
 	      <div class="clearfix">
 	        <input type="text" placeholder="Event Name" ng-model="editing.name">
@@ -21,8 +21,9 @@
 
 
 
-	      <button class="btn btn-primary" type="submit" >Save</button>
+	      <button class="btn btn-primary" type="submit">Save</button>
 	      <button class="btn btn-danger" ng-click="deleteEvent(editing.id)">Delete</button>
+		  <button class="btn btn-info" ng-click="cancelEvent()">Cancel</button>
 	    </fieldset>
 	  </form>
 
