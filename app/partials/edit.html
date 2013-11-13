@@ -1,0 +1,29 @@
+<div ng-show="editing">
+	<form action="">
+	    <fieldset>
+	      <div class="clearfix">
+	        <input type="text" placeholder="Event Name" ng-model="editing.name">
+	      </div>
+	      <div class="clearfix">
+	        <input type="text" placeholder="Date"  ng-model="editing.date" />
+	      </div>
+  	      <div class="clearfix">
+	        <input type="text" placeholder="time"  ng-model="editing.time" />
+	      </div>
+	      <div class="clearfix">
+	        <input type="text" placeholder="description"  ng-model="editing.description" />
+	      </div>
+	      <div class="clearfix">
+	        <input type="text" placeholder="Date"  ng-model="editing.imageUrl" ng-model="picImage" />
+
+	        <img ng-src="{{editing.imageUrl}}" class="pull-right" alt="User Image" />
+	      </div>
+
+
+
+	      <button class="btn btn-primary" type="submit" >Save</button>
+	      <button class="btn btn-danger" ng-click="deleteEvent(editing.id)">Delete</button>
+	    </fieldset>
+	  </form>
+
+</div>

@@ -1,11 +1,13 @@
 'use strict';
 
+/*The module */
+var myApp = angular.module('myApp', []);
+
+
 /* Controllers */
+myApp.controller("eventsController", 
+	function eventsController($scope){
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+		
 
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+	});
