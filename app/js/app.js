@@ -2,7 +2,7 @@
 
 
 //Create the module to be used 
-var eventsApp= angular.module('eventsApp', ['ngResource', 'ngRoute'])
+var eventsApp= angular.module('eventsApp', ['ngResource', 'ngRoute', 'ngCookies'])
 			.config(function($routeProvider){
 
 				//Creating routes.
@@ -31,6 +31,9 @@ var eventsApp= angular.module('eventsApp', ['ngResource', 'ngRoute'])
 				//if a url was specified that it didnot know then the routeprovider.otherwise will be use to redirect to a default route
 				//default route 
 				$routeProvider.otherwise({ redirectTo:'/'});
+
+
+				
 			});
 
 

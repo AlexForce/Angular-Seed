@@ -39,7 +39,14 @@ eventsApp.factory('eventData', function($resource){
                         complete: true
                         }];
 
+                var userAuth={  name:'Solomon',
+                                password:'Perkins'
+                        };
+
             return{
+
+
+                        //Event CRUD
                         getAllEvents: function(){
                                 
                                 //Used to query the data
@@ -52,8 +59,28 @@ eventsApp.factory('eventData', function($resource){
                         viewEvent : function(eventId){
                                  return data[eventId-1];
                                 
-                        }
+                        },
+                        updateEvent: function(){
+                                //Used when data gets submitted 
+                                return data;
+                        },
+                        deleteEvent: function(eventId){
+                                //Will be used to remove this event from the object.
+                                
+                                return data[eventId-1]=null?true: false;
 
+
+
+                        },
+
+
+                        //LOGIN
+                        logoutEvent: function(){
+                                return null;
+                        },
+                        loginEvent: function($scope){
+                                return userAuth;
+                        }
 
 
                 };

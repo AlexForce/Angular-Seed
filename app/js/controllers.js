@@ -21,14 +21,32 @@ eventsApp.controller('viewEventController',
                         //The routeParams parameter contains all the route parameter     
                       //Created a service called getAll events which returns the list of
                       $scope.event = eventData.viewEvent($routeParams.eventId);
-                      console.log($scope.event);
+                      console.log($scope.event.id);
+                
+                      $scope.deleteEventFn = function(){
+                              $scope.deleteEvent = eventData.deleteEvent($scope.event.id);
+                                if($scope.deleteEvent){
+                                        alert('event deleted');
+                                }
+                        };
 		});
 
 
 
 eventsApp.controller('loginController', 
                 function loginController($scope, $location ,eventData){
+                        //Click
+                        $scope.cookie=eventData.loginEvent();
+                        $scope.logoutFn= function(){
+                                $scope.cookie= eventData.logoutEvent();
+                        }
+
+                        $scope.loginFn = function(){
+                                $scope.cookie=eventData.loginEvent();
+                        }
+
+
+                });
 
 
 
-                })

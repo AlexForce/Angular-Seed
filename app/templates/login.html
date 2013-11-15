@@ -1,24 +1,24 @@
-<div class="row-fluid" ng-show="!login.cookie">
+<div class="row-fluid" ng-show="!cookie">
 	<div class="login-form">
 	  <h2>Login</h2>
-	  <form action="">
+	  <form action="" method="post">
 	    <fieldset>
 	      <div class="clearfix">
-	        <input type="text" placeholder="Username">
+	        <input type="text" placeholder="Username" required>
 	      </div>
 	      <div class="clearfix">
-	        <input type="password" placeholder="Password">
+	        <input required type="password" placeholder="Password">
 	      </div>
-	      <button class="btn btn-primary" type="submit">Sign in</button>
+	      <button class="btn btn-primary" ng-click="loginFn()" type="submit">Sign in</button>
 	    </fieldset>
 	  </form>
 	</div>
 	</div>
 </div>
 
-<div ng-show="login.cookie">
-	<h2>Logout {{login.cookie.name}}</h2>
+<div ng-show="cookie" >
+	<h2>Logout {{cookie.name}}?</h2>
 	<hr />
-	<a class="btn btn-danger">Logout {{login.cookie.name}}</a>
-	<a href="#/" class="btn btn-primary">Back</a>
+	<a class="btn btn-danger" ng-click="logoutFn()" >Yes</a>
+	<a href="#/" class="btn btn-primary">No</a>
 </div>
