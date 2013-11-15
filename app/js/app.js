@@ -2,7 +2,7 @@
 
 
 //Create the module to be used 
-var eventsApp= angular.module('eventsApp', ['ngResource', 'ngRoute', 'ngCookies'])
+var eventsApp= angular.module('eventsApp', ['ngResource', 'ngRoute'])
 			.config(function($routeProvider){
 
 				//Creating routes.
@@ -33,7 +33,7 @@ var eventsApp= angular.module('eventsApp', ['ngResource', 'ngRoute', 'ngCookies'
 				$routeProvider.otherwise({ redirectTo:'/'});
 
 
-				
+
 			});
 
 
