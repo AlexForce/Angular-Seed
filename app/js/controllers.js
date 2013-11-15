@@ -17,10 +17,11 @@ eventsApp.controller("homeEventController",
 
 
 eventsApp.controller('viewEventController',
-		function viewEventController($scope, $location, eventData){     
+		function viewEventController($scope, $routeParams, eventData){
+                        //The routeParams parameter contains all the route parameter     
                       //Created a service called getAll events which returns the list of
-                      $scope.event = eventData.viewEvent();
-                      console.log($location.get(':eventId'));
+                      $scope.event = eventData.viewEvent($routeParams.eventId);
+                      console.log($scope.event);
 		});
 
 

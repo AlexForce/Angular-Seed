@@ -1,4 +1,4 @@
-<div class="row-fluid" >
+<div class="row-fluid" ng-show="!login.cookie">
 	<div class="login-form">
 	  <h2>Login</h2>
 	  <form action="">
@@ -14,4 +14,11 @@
 	  </form>
 	</div>
 	</div>
+</div>
+
+<div ng-show="login.cookie">
+	<h2>Logout {{login.cookie.name}}</h2>
+	<hr />
+	<a class="btn btn-danger">Logout {{login.cookie.name}}</a>
+	<a href="#/" class="btn btn-primary">Back</a>
 </div>

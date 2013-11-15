@@ -6,22 +6,30 @@
 	        <input type="text" placeholder="Event Name" ng-model="event.name">
 	      </div>
 	      <div class="clearfix">
-	        <input type="text" placeholder="Event Date">
+	        <input type="text" placeholder="Event Date" ng-model="event.date">
 	      </div>
 	      <div class="clearfix">
-	        <input type="text" placeholder="Event Time">
+	        <input type="text" placeholder="Event Time" ng-model="event.time">
 	      </div>
 	      <div class="clearfix">
-	      	<textarea placeholder="Event Description"></textarea>
+	      	<textarea placeholder="Event Description">{{event.description}}</textarea>
 	      </div>
+		  <div class="clearfix">
+	       	<label>Active {{event.complete}}</label>
+	        <input type="checkbox" ng-model="event.complete" />
+	      </div>
+	      
 	      <div class="clearfix">
-	        <input type="text" placeholder="Image Url" ng-model="imageUrl" />
-	      	<img ng-src="{{imageUrl}}" alt="{{event.name}}"/>
+	        <input type="text" placeholder="Image Url" ng-model="event.imageUrl" />
+	      	<img ng-src="{{event.imageUrl}}" alt="{{event.name}}"/>
 	      </div>
 
+
 	      
-	      
-	      <button class="btn btn-primary" type="submit">Sign in</button>
+	      <hr/>
+	      <button class="btn btn-primary" type="submit">Update</button>
+	      <a class="btn btn-danger" >Delete</a>
+
 	    </fieldset>
 	  </form>
 

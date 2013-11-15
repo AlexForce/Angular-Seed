@@ -9,20 +9,28 @@
 			height: 60px;
 		}
 
+		.list{
+			padding: 0;
+			margin: 0;
+		}
 	</style>
 	<p class="">
 		<input type="text" class="" ng-model="search"/>
 	</p>
 	
 	<hr/>
-	<ul class="">
-		<li class="" ng-repeat="event in events | filter:search | orderBy:sortorder">
-			<a href="#/viewEvent/{{event.id}})">
-				<span><img ng-src="{{event.imageUrl}}" alt="event.name" /></span>| 
-				<span>{{event.name}}</span>| 
-				<span>{{event.date}}</span>| 
+	<ul class="list">
+		<li class="list_item" ng-repeat="event in events | filter:search | orderBy:'id'" >
+			<a href="#/viewEvent/{{event.id}}">
+				<span><img ng-src="{{event.imageUrl}}" alt="event.name" /></span> 
+				<span>{{event.name}}</span>
+				<span>{{event.date}}</span> 
 				<span>{{event.time}}</span>
+				<span class=" label glyphicon glyphicon-flag {{event.status}}"> [+] </span>
 			</a>
 		</li>
+
+		<li style="display: inline-block; width: 100%; height: 30px; color: red;" ng-show="!events.length"><a href="" >No events found</a></li>
+
 	</ul>
 </div>

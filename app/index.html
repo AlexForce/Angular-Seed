@@ -24,6 +24,7 @@
         width: 40px;
         border-right: 1px solid #d6d6d6;
       }
+
     </style>
     
         <script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.1.2.min.js"></script>
@@ -38,13 +39,18 @@
               <ul class="nav">
                 <li class=""><a href="#/home">Home</a></li>
                 <li class=""><a href="#/newEvent">New Event</a></li>
-                
               </ul>
               <ul class="nav pull-right">
                 <li class="dropdown">
-                  <a href="" class="dropbown-toggle" data-toggle="dropdown" >Logout <b class="caret"></b></a>
+                  <a href="" class="dropbown-toggle" data-toggle="dropdown" >  
+                      <span ng-show="login.cookie">Logout </span>
+                      <span ng-hide="login.cookie">Login </span> <b class="caret"></b>
+                  </a>
                   <ul class="dropdown-menu">
-                    <li><a href="#/login">Logout Solomon</a></li>
+                    <li><a href="#/login">
+                        <span ng-show="login.cookie">Logout </span>
+                        <span ng-hide="login.cookie">Login </span>
+                        {{login.cookie.name}}</a></li>
                   </ul>
 
                 </li>

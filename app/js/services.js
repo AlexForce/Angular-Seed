@@ -10,21 +10,23 @@ eventsApp.factory('eventData', function($resource){
         //A resource used to async data from url. and store it.
         var resource = $resource('/data/event/:id',{id:'@id'});
         var data =[{
-                        id: 1,
+                        id: 3,
                         name:"Solomon",
                         imageUrl:"img/default.png",
                         date: "2013-12-12",
                         time: "12:12:00",
                         description: "A simple event trial",
-                        status:'label-warning'
+                        status:'label-warning',
+                        complete:true
                         },
-                        {        id: 2,
+                        {        id: 1,
                         name:"Peter",
                         imageUrl:"img/car.jpg",
                         date: "2013-12-12",
                         time: "12:12:00",
                         description: "A simple event trial",
-                        status:'label-success'
+                        status:'label-success',
+                        complete: false,
                         },
                         {
                         id: 3,
@@ -33,7 +35,8 @@ eventsApp.factory('eventData', function($resource){
                         date: '2014-12-12',
                         time: '1:1:1',
                         description: 'A simple event to ... not sure as yet',
-                        status:'label-important'
+                        status:'label-important',
+                        complete: true
                         }];
 
             return{
@@ -47,9 +50,10 @@ eventsApp.factory('eventData', function($resource){
                         },
 
                         viewEvent : function(eventId){
-                                return  data[eventId-1];
-                                alert(eventId);
+                                 return data[eventId-1];
+                                
                         }
+
 
 
                 };
