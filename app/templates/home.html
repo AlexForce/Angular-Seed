@@ -1,0 +1,28 @@
+<div >
+	<style type="text/css">
+		li{
+			border-bottom: 1px solid #e4e4e4;
+			list-style: none;
+			padding: 4px 0;
+		}
+		img{width: 60px;
+			height: 60px;
+		}
+
+	</style>
+	<p class="">
+		<input type="text" class="" ng-model="search"/>
+	</p>
+	
+	<hr/>
+	<ul class="">
+		<li class="" ng-repeat="event in events | filter:search | orderBy:sortorder">
+			<a href="#/viewEvent/{{event.id}})">
+				<span><img ng-src="{{event.imageUrl}}" alt="event.name" /></span>| 
+				<span>{{event.name}}</span>| 
+				<span>{{event.date}}</span>| 
+				<span>{{event.time}}</span>
+			</a>
+		</li>
+	</ul>
+</div>

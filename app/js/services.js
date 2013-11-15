@@ -4,6 +4,55 @@
 
 
 // Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('myApp.services', []).
-  value('version', '0.1');
+//Creating a server which will provide the data for the Controller
+eventsApp.factory('eventData', function($resource){
+	
+        //A resource used to async data from url. and store it.
+        var resource = $resource('/data/event/:id',{id:'@id'});
+        var data =[{
+                        id: 1,
+                        name:"Solomon",
+                        imageUrl:"img/default.png",
+                        date: "2013-12-12",
+                        time: "12:12:00",
+                        description: "A simple event trial",
+                        status:'label-warning'
+                        },
+                        {        id: 2,
+                        name:"Peter",
+                        imageUrl:"img/car.jpg",
+                        date: "2013-12-12",
+                        time: "12:12:00",
+                        description: "A simple event trial",
+                        status:'label-success'
+                        },
+                        {
+                        id: 3,
+                        name:"Medullan Event",
+                        imageUrl: 'img/default.png',
+                        date: '2014-12-12',
+                        time: '1:1:1',
+                        description: 'A simple event to ... not sure as yet',
+                        status:'label-important'
+                        }];
+
+            return{
+                        getAllEvents: function(){
+                                
+                                //Used to query the data
+                                //$resource.query();
+
+                                return data;
+                          
+                        },
+
+                        viewEvent : function(eventId){
+                                return  data[eventId-1];
+                                alert(eventId);
+                        }
+
+
+                };
+
+        
+})
